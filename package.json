@@ -10,6 +10,8 @@
   "license": "ISC",
   "homepage": "https://github.com/lorchik7/face-recognition-api",
   "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "cors": "^2.8.5",
     "express": "^4.17.2"
   },
   "devDependencies": {

@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.listen(3000, ()=> {
 	console.log("app is running on port 300");
@@ -32,7 +34,7 @@ const database = {
 };
 
 app.get('/', (req, res)=> {
-	res.send('this is working');
+	res.send(database.users);
 })
 
 //implement signin endpoint
