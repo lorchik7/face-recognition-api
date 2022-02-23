@@ -12,6 +12,7 @@ const handleRegister = (req, res, db, bcrypt)=> {
 		.into('login')
 		.returning('email')
 		.then(loginEmail => {
+			console.log("Degub>>>>>>>> " + loginEmail);
 			return trx('users')
 				.returning('*') 
 				.insert({
@@ -20,6 +21,7 @@ const handleRegister = (req, res, db, bcrypt)=> {
 					joined: new Date()
 				})
 				.then(user => {
+					console.log("USER>>>>>>>> " + user);
 					res.json(user[0]);
 				})
 		})
